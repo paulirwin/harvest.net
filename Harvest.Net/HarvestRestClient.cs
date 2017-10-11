@@ -38,13 +38,13 @@ namespace Harvest.Net
 
             _httpClient.DefaultRequestHeaders.Add("Harvest-Account-Id", accountId.ToString());
 
-            CompanyApi = RestService.For<ICompanyApi>(_httpClient, refitSettings);
-            ClientApi = RestService.For<IClientApi>(_httpClient, refitSettings);
+            Companies = RestService.For<ICompanyApi>(_httpClient, refitSettings);
+            Clients = RestService.For<IClientApi>(_httpClient, refitSettings);
         }
 
-        public IClientApi ClientApi { get; }
+        public IClientApi Clients { get; }
 
-        public ICompanyApi CompanyApi { get; }
+        public ICompanyApi Companies { get; }
 
         public void Dispose()
         {

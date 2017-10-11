@@ -4,8 +4,8 @@ namespace Harvest.Net
 {
     public interface IHarvestRestClient
     {
-        IClientApi ClientApi { get; }
+        IClientApi Clients { get; }
 
-        ICompanyApi CompanyApi { get; }
+        ICompanyApi Companies { get; }
     }
 }
