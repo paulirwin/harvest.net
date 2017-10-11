@@ -1,19 +1,11 @@
-﻿using Harvest.Net.Models.Interfaces;
-using RestSharp;
+﻿using Harvest.Net.Resources;
 
 namespace Harvest.Net
 {
-    public partial interface IHarvestRestClient
+    public interface IHarvestRestClient
     {
-        string BaseUrl { get; }
+        IClientApi ClientApi { get; }
 
-        string DateFormat { get; set; }
-
-        T Execute<T>(IRestRequest request)
-            where T : new();
-
-        IRestResponse Execute(IRestRequest request);
-
-        IOAuth RefreshToken(string refreshToken);
+        ICompanyApi CompanyApi { get; }
     }
 }
